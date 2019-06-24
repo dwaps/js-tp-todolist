@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+/* COMMON */
+html {
+  color: #333;
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 580px;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* ADD TODO FORM */
+.add-todo {
+  text-align: center;
+  width: 340px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+  border: 1px solid #eee;
+  background: #eee;
+}
+
+.add-todo input {
+  height: 30px;
+  width: 90%;
+  margin-top: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  outline: none;
+}
+
+.add-todo input:first-of-type {
+  width: 80%;
+  padding-left: 10px;
+}
+
+.add-todo input[type=submit] {
+  font-size: 1.1rem;
+  height: 40px;
+  cursor: pointer;
+}
+
+.add-todo input[type=submit]:hover {
+  background: rgb(84, 165, 165);
+  color: white;
+}
+
+.add-todo input[type=submit]:active {
+  background: teal;
+  color: white;
+}
+
+
+/* TODOLIST */
+.todolist {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 20px;
+}
+
+.todo {
+  display: flex;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  box-shadow: 1px 3px 4px #444, 2px 2px 4px #ccc inset;
+  transition: .1s linear;
+}
+
+.todo * {
+  cursor: pointer;
+}
+
+.todo:hover + span {
+  border-radius: 50%;
+}
+
+.todo:nth-child(5n) { background: hsl(39, 77%, 77%); }
+.todo:nth-child(5n+1) { background: hsl(244, 77%, 77%); }
+.todo:nth-child(5n+2) { background: hsl(327, 77%, 77%); }
+.todo:nth-child(5n+3) { background: hsl(120, 77%, 77%); }
+.todo:nth-child(5n+4) { background: hsl(189, 77%, 77%); }
+
+.todo:hover {
+  filter: brightness(95%);
+  box-shadow: 2px 4px 5px #eee, 1px 1px 3px #eee inset;
+  color: white;
+}
+
+.todo input[type=checkbox] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.todo input[type=checkbox] + span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 6px;
+  margin-right: 10px;
+  background: #eee;
+}
+
+.todo input[type=checkbox] + span + span {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+}
+
+.todo input[type=checkbox]:checked ~ * {
+  text-decoration: line-through;
+}
+
+.todo input[type=checkbox]:checked + span {
+  background: green;
+}
+
+.todo .bt-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-left: 60px;
+  outline: none;
+  transition: .1s linear;
+}
+
+.todo .bt-close:hover {
+  color: red;
+  text-shadow: 1px 1px 1px #999;
+}
+
+.todo .bt-close:active {
+  color: darkred;
+  text-shadow: 0 0 1px #999;
+}
